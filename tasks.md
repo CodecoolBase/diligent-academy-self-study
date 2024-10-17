@@ -33,7 +33,10 @@ The response's body should be a JSON string in this form (example):
 If the operands are not numbers or `a` or `b` is missing return a `400` 
 response code with the Fastify's built-in validation error message.
 
-Make sure you provide the proper reply scheme (serialization).
+If the operands in the path are not one of `add`, `subtract`, `multiple`, `divide`
+respond with `400` status code with the Fastify's built-in validation error message.
+
+Make sure you provide the proper reply scheme for `200 OK`(serialization).
 
 Taking into account the separation of concerns clean coding principle,
 how would you organize the calculation logic?
@@ -59,11 +62,8 @@ The body of the calculator should looks like this (example):
 }
 ```
 
-If the items are not an array of numbers, respond with `400` status code
+If the items are not an array of numbers or the property is missing, respond with `400` status code
 with the Fastify's built-in validation error message.
-
-If the operands in the path are not one of `add`, `subtract`, `multiple`, `divide`
-respond with `400` status code with the Fastify's built-in validation error message.
 
 The response's body should be a JSON string in this form (example):
 
@@ -74,7 +74,7 @@ The response's body should be a JSON string in this form (example):
 }
 ```
 
-Make sure you provide the proper reply scheme (serialization).
+Make sure you provide the proper reply scheme (serialization) for `200 OK`s.
 
 Take care of the separation of concerns clean coding principle.
 
